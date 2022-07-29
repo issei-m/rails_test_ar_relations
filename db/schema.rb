@@ -14,8 +14,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_012320) do
   create_table "people", force: :cascade do |t|
     t.string "nickname", null: false
     t.integer "sex", limit: 1, null: false
+    t.integer "prefecture_id", limit: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.string "name", null: false
+  end
+
+  create_table "prefectures_person_wants_to_live_in", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.integer "person_id"
+    t.index ["person_id"], name: "index_prefectures_person_wants_to_live_in_on_person_id"
+    t.index ["prefecture_id"], name: "index_prefectures_person_wants_to_live_in_on_prefecture_id"
   end
 
 end
