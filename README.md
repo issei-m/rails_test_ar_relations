@@ -1,24 +1,19 @@
-# README
+# rails_test_ar_relations
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In your console:
 
-Things you may want to cover:
+```bash
+docker build -t rails_test .
+docker run -it --rm -v $(pwd):/opt/app rails_test
+```
 
-* Ruby version
+In the bash you've just logged in:
 
-* System dependencies
+```
+bash-5.1$ rails db:reset
+bash-5.1$ rails db:migrate:reset
+bash-5.1$ rails db:fixtures:load
+bash-5.1$ rails c
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Enjoy :)
