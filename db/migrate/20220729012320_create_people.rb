@@ -4,8 +4,6 @@ class CreatePeople < ActiveRecord::Migration[7.0]
       t.string :nickname, null: false
       t.integer :sex, limit: 1, null: false
       t.integer :prefecture_id, limit: 1, null: false
-
-      t.timestamps
     end
 
     create_table :prefectures_person_wants_to_live_in do |t|

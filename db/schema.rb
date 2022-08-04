@@ -15,8 +15,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_012320) do
     t.string "nickname", null: false
     t.integer "sex", limit: 1, null: false
     t.integer "prefecture_id", limit: 1, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "prefectures", force: :cascade do |t|
