@@ -8,6 +8,8 @@ class Person < ApplicationRecord
   scope :female, -> { where(sex: :female) }
   scope :other, -> { where(sex: :other) }
 
+  scope :living_in_tokyo, -> { where(live_in: Prefecture.tokyo) }
+
   validates :nickname, presence: true
   validates :sex, presence: true
   validates :live_in, presence: true
